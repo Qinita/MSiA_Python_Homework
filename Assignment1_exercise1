@@ -1,7 +1,38 @@
-
-
 '''
+Assignment #1 
+
 Exercise 1. 
-Write a function p having three arguments. The first one, l, is a mutable indexable object (e.g. a list or numpy array). The second  and third ones are integers, i and j.
-Function p will rearrange in place the elements of  l in the range [i:j] (remember in python ranges i is included, and j is not included), into two nonempty ranges [i:q] and [q:j] such that each element in l[i:q] is less than or equal to each element l[q:j]. The index q is returned by this function.
-'''
+Write a function p having three arguments. The first one, l, is a mutable indexable object 
+(e.g. a list or numpy array). The second  and third ones are integers, i and j.
+Function p will rearrange in place the elements of  l in the range [i:j] (remember 
+	in python ranges i is included, and j is not included), into two nonempty ranges
+ [i:q] and [q:j] such that each element in l[i:q] is less than or equal to each element l[q:j]. 
+ The index q is returned by this function.
+ '''
+def p(l,i,j):
+ 	p = j
+ 	b = i - 1
+ 	t = j
+
+ 	done = 0
+ 	while not done:
+ 		while not done:
+ 			b = b + 1
+ 			if b == t:
+ 				done = 1
+ 				break
+ 			if l[b] > l[p]:
+ 				list[t] = list[b]
+ 				break
+ 		while not done:
+ 			t = t-1
+ 			if t == b:
+ 				done = 1
+ 				break
+ 			if l[t] < l[p]:
+ 				l[b] = l[t]
+ 				break
+ 	return p
+
+#test
+#test print(p([1,2,3,4,5,6,7],3,6))
